@@ -45,15 +45,13 @@ export default defineConfig({
         '@vueuse/head',
         '@vueuse/core',
       ],
-      dts: true,
+      dts: 'src/auto-imports.d.ts',
     }),
 
     // https://github.com/antfu/unplugin-vue-components
     Components({
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
-
-      dts: true,
 
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
@@ -67,10 +65,14 @@ export default defineConfig({
           // enabledCollections: ['carbon']
         }),
       ],
+
+      dts: 'src/components.d.ts',
     }),
 
     // https://github.com/antfu/unplugin-icons
-    Icons(),
+    Icons({
+      autoInstall: true,
+    }),
 
     // https://github.com/antfu/vite-plugin-windicss
     WindiCSS({
@@ -155,6 +157,7 @@ export default defineConfig({
       'vue',
       'vue-router',
       '@vueuse/core',
+      '@vueuse/head',
     ],
     exclude: [
       'vue-demi',
