@@ -109,9 +109,10 @@ As this template is strongly opinionated, the following provides a curated list 
 
 ###### Official
 
-- [**vitesse-lite**](https://github.com/antfu/vitesse-lite) - Lightweight version of Vitesse
-- [**vitesse-webext**](https://github.com/antfu/vitesse-webext) - WebExtension Vite starter template
-- [vitesse-nuxt](https://github.com/antfu/vitesse-nuxt) - Vitesse experience for Nuxt 2
+- [vitesse-lite](https://github.com/antfu/vitesse-lite) - Lightweight version of Vitesse
+- [vitesse-nuxt3](https://github.com/antfu/vitesse-nuxt3) - Vitesse for Nuxt 3
+- [vitesse-nuxt-bridge](https://github.com/antfu/vitesse-nuxt-bridge) - Vitesse for Nuxt 2 with Bridge
+- [vitesse-webext](https://github.com/antfu/vitesse-webext) - WebExtension Vite starter template
 
 ###### Community
 
@@ -120,6 +121,7 @@ As this template is strongly opinionated, the following provides a curated list 
 - [vitespa](https://github.com/ctholho/vitespa) by [@ctholho](https://github.com/ctholho) - Like Vitesse but without SSG/SSR
 - [vitailse](https://github.com/zynth17/vitailse) by [@zynth17](https://github.com/zynth17) - Like Vitesse but with TailwindCSS
 - [vitesse-modernized-chrome-ext](https://github.com/xiaoluoboding/vitesse-modernized-chrome-ext) by [@xiaoluoboding](https://github.com/xiaoluoboding) - ⚡️ Modernized Chrome Extension Manifest V3 Vite Starter Template
+- [vitesse-stackter-clean-architect](https://github.com/shamscorner/vitesse-stackter-clean-architect) by [@shamscorner](https://github.com/shamscorner) - A modular clean architecture pattern in vitesse template
 
 ## Try it now!
 
