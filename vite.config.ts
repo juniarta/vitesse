@@ -44,6 +44,7 @@ export default defineConfig({
         'vue-i18n',
         '@vueuse/head',
         '@vueuse/core',
+        'vitest',
       ],
       dts: 'src/auto-imports.d.ts',
     }),
@@ -61,7 +62,7 @@ export default defineConfig({
         // auto import icons
         // https://github.com/antfu/unplugin-icons
         IconsResolver({
-          componentPrefix: '',
+          prefix: false,
           // enabledCollections: ['carbon']
         }),
       ],
@@ -86,11 +87,9 @@ export default defineConfig({
       headEnabled: true,
       markdownItSetup(md) {
         // https://prismjs.com/
-        // @ts-expect-error types mismatch
         md.use(Prism)
-        // @ts-expect-error types mismatch
         md.use(LinkAttributes, {
-          pattern: /^https?:\/\//,
+          matcher: (link: string) => /^https?:\/\//.test(link),
           attrs: {
             target: '_blank',
             rel: 'noopener',
@@ -164,5 +163,14 @@ export default defineConfig({
     exclude: [
       'vue-demi',
     ],
+  },
+
+  // https://github.com/vitest-dev/vitest
+  test: {
+    include: ['test/**/*.test.ts'],
+    environment: 'jsdom',
+    deps: {
+      inline: ['@vue', '@vueuse', 'vue-demi'],
+    },
   },
 })
