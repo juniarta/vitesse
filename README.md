@@ -21,15 +21,16 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 
 <br>
 
+
 ## Features
 
-- ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
+- ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
 
 - 🗂 [File based routing](./src/pages)
 
 - 📦 [Components auto importing](./src/components)
 
-- 🍍 [State Management via Pinia](https://pinia.esm.dev/)
+- 🍍 [State Management via Pinia](https://pinia.vuejs.org/)
 
 - 📑 [Layout system](./src/layouts)
 
@@ -41,9 +42,11 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 
 - 🌍 [I18n ready](./locales)
 
-- 🗒 [Markdown Support](https://github.com/antfu/vite-plugin-md)
+- 🗒 [Markdown Support](https://github.com/antfu/vite-plugin-vue-markdown)
 
 - 🔥 Use the [new `<script setup>` syntax](https://github.com/vuejs/rfcs/pull/227)
+
+- 🤙🏻 [Reactivity Transform](https://vuejs.org/guide/extras/reactivity-transform.html) enabled
 
 - 📥 [APIs auto importing](https://github.com/antfu/unplugin-auto-import) - use Composition API and others directly
 
@@ -58,6 +61,7 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 - ☁️ Deploy on Netlify, zero-config
 
 <br>
+
 
 ## Pre-packed
 
@@ -79,7 +83,7 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 - [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components) - components auto import
 - [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use Vue Composition API and others without importing
 - [`vite-plugin-pwa`](https://github.com/antfu/vite-plugin-pwa) - PWA
-- [`vite-plugin-md`](https://github.com/antfu/vite-plugin-md) - Markdown as components / components in Markdown
+- [`vite-plugin-vue-markdown`](https://github.com/antfu/vite-plugin-vue-markdown) - Markdown as components / components in Markdown
   - [`markdown-it-prism`](https://github.com/jGleitz/markdown-it-prism) - [Prism](https://prismjs.com/) for syntax highlighting
   - [`prism-theme-vars`](https://github.com/antfu/prism-theme-vars) - customizable Prism.js theme using CSS variables
 - [Vue I18n](https://github.com/intlify/vue-i18n-next) - Internationalization
@@ -122,7 +126,6 @@ As this template is strongly opinionated, the following provides a curated list 
 
 ###### Community
 
-- [vitesse-addons](https://github.com/JohnCampionJr/vitesse-addons) by [@johncampionjr](https://github.com/johncampionjr) - additional options for integrations, including [Prettier](https://prettier.io) and [Storybook](https://storybook.js.org)
 - [vitesse-ssr-template](https://github.com/frandiox/vitesse-ssr-template) by [@frandiox](https://github.com/frandiox) - Vitesse with SSR
 - [vitespa](https://github.com/ctholho/vitespa) by [@ctholho](https://github.com/ctholho) - Like Vitesse but without SSG/SSR
 - [vitailse](https://github.com/zynth17/vitailse) by [@zynth17](https://github.com/zynth17) - Like Vitesse but with TailwindCSS
@@ -130,6 +133,8 @@ As this template is strongly opinionated, the following provides a curated list 
 - [vitesse-stackter-clean-architect](https://github.com/shamscorner/vitesse-stackter-clean-architect) by [@shamscorner](https://github.com/shamscorner) - A modular clean architecture pattern in vitesse template
 - [vitesse-enterprise](https://github.com/FranciscoKloganB/vitesse-enterprise) by [@FranciscoKloganB](https://github.com/FranciscoKloganB) - Consistent coding styles regardless of team-size.
 - [vitecamp](https://github.com/nekobc1998923/vitecamp) by [@nekobc1998923](https://github.com/nekobc1998923) - Like Vitesse but without SSG/SSR/File based routing, includes Element Plus
+- [vitesse-lite-react](https://github.com/lxy-yz/vitesse-lite-react) by [@lxy-yz](https://github.com/lxy-yz) - vitesse-lite React fork
+- [vide](https://github.com/Nico-Mayer/vide) by [@nico-mayer](https://github.com/Nico-Mayer) - Vite superlight Beginner Starter Template
 
 ## Try it now!
 
@@ -185,6 +190,20 @@ And you will see the generated file in `dist` that ready to be served.
 ### Deploy on Netlify
 
 Go to [Netlify](https://app.netlify.com/start) and select your clone, `OK` along the way, and your App will be live in a minute.
+
+### Docker Production Build
+
+First, build the vitesse image by opening the terminal in the project's root directory.
+
+```bash
+docker buildx build . -t vitesse:latest
+```
+
+Run the image and specify port mapping with the `-p` flag.
+
+```bash
+docker run --rm -it -p 8080:80 vitesse:latest
+```
 
 ## Why
 
